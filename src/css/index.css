@@ -1,0 +1,106 @@
+html {
+  min-height: 100%;
+}
+body {
+  background-color: dodgerblue;
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #434d57;
+}
+a {
+  text-decoration: none;
+}
+.main-wrapper {
+  max-width: 933px;
+  height: auto;
+  padding: 30px;
+  margin: 50px auto;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #777;
+}
+.main-wrapper .content {
+  margin-bottom: 15px;
+}
+.main-wrapper .user-calendar {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  color: white;
+  background-color: #343434;
+}
+.main-wrapper .user-calendar svg.react-github-calendar__calendar text {
+  fill: white !important;
+}
+.main-wrapper .user-content {
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+.main-wrapper .user-content img {
+  width: 150px;
+  filter: sepia(100%);
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+.main-wrapper .user-content .img-detail {
+  background-color: #ccc;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+.main-wrapper .user-content .img-detail .img-name {
+  transition-duration: 0.2s;
+  padding-top: 12px;
+}
+.main-wrapper .user-content .img-detail a:visited {
+  color: #434d57;
+}
+.main-wrapper .user-content .img-detail:hover {
+  background-color: dodgerblue;
+}
+.main-wrapper .user-content .img-detail:hover img {
+  filter: sepia(0);
+}
+.main-wrapper .user-content .img-detail:hover .img-name {
+  background-color: dodgerblue;
+  color: white;
+}
+.main-wrapper .user-content .img-detail:hover a {
+  color: white;
+  text-decoration: underline;
+}
+.main-wrapper .user-content .user-detail {
+  padding: 0 15px;
+  background-color: #f5f5f5;
+  margin-left: 15px;
+  width: 100%;
+}
+.main-wrapper .user-content .user-detail h4 {
+  margin: 12px 0;
+  color: #434d57;
+  text-decoration: underline;
+}
+.main-wrapper .user-content .user-detail ul {
+  padding-left: 0;
+}
+.main-wrapper .user-content .user-detail ul li {
+  list-style: none;
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+}
+.main-wrapper .user-content .user-detail .follow-link {
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 8px 20px;
+  background-color: green;
+  width: fit-content;
+  color: white;
+  border-radius: 4px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+.main-wrapper .user-content .user-detail .follow-link:hover {
+  background-color: #00b300;
+}
