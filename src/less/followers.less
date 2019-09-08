@@ -1,5 +1,14 @@
 .following-content {
   display: flex;
+  flex-wrap: wrap;
+
+  .h4-container {
+    width: 110px;
+  }
+
+  .list-container {
+    width: calc(100% - 145px);
+  }
 
   .follower-list {
     display: flex;
@@ -8,6 +17,7 @@
     display: inline-flex;
     margin-left: 15px;
     padding: 10px;
+    width: 100%;
 
     a {
       display: inline-flex;

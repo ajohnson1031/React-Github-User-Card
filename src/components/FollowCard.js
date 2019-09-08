@@ -2,13 +2,17 @@ import React from "react";
 import { Card, Image } from "semantic-ui-react";
 
 class FollowCard extends React.Component {
-  constructor({ followers }) {
+  constructor({ followers, followerCount, followName }) {
     super();
     this.followers = followers;
+    this.followerCount = followerCount;
+    this.followName = followName;
 
     this.state = {
+      followName: this.followName,
       followers_url: `${this.followers}?page=1&per_page=20`,
       followers: "",
+      followerCount: this.followerCount,
       follower_imgs: "",
       page: 1
     };
@@ -21,11 +25,13 @@ class FollowCard extends React.Component {
       .then(res => res.json())
       .then(res => {
         this.setState({
+          followName: this.state.followName,
           followers_url: this.state.followers_url,
           followers: res,
-          follower_imgs: res.map(r => r.avatar_url)
+          followerCount: this.state.followerCount,
+          follower_imgs: res.map(r => r.avatar_url),
+          page: this.state.page
         });
-        console.log(this.state.followers_url);
       })
       .catch(err => console.log(err));
   }
@@ -34,25 +40,36 @@ class FollowCard extends React.Component {
     return (
       this.state.followers && (
         <Card.Content className="mycontent following-content">
-          <div>
-            <h4>Followers ({this.state.followers.length}):</h4>
+          <div className="h4-container">
+            <h4>Followers ({this.state.followerCount}):</h4>
           </div>
-          <div className="follower-list">
-            {this.state.followers.map((follower, i) => {
-              return (
-                <a
-                  href={follower.html_url}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  key={follower.id}
-                >
-                  <div className="follower-tab">
-                    <Image src={this.state.follower_imgs[i]} />
-                    <p>{follower.login}</p>
-                  </div>
-                </a>
-              );
-            })}
+          <div className="list-container">
+            <div className="follower-list">
+              {this.state.followers.map((follower, i) => {
+                return (
+                  <a
+                    href={follower.html_url}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    key={follower.id}
+                  >
+                    <div className="follower-tab">
+                      <Image src={this.state.follower_imgs[i]} />
+                      <p>{follower.login}</p>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+            <a
+              href={`https://github.com/${this.state.followName}?tab=followers`}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <div className="github-linkto">
+                <p>{`See All Followers (${this.state.followerCount})`}</p>
+              </div>
+            </a>
           </div>
         </Card.Content>
       )
