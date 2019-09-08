@@ -23,7 +23,6 @@ class UserCard extends React.Component {
     fetch("https://api.github.com/users/ajohnson1031")
       .then(res => res.json())
       .then(res => {
-        console.log(res);
         this.setState({
           userName: this.state.userName,
           userData: res
@@ -37,7 +36,6 @@ class UserCard extends React.Component {
       fetch(`https://api.github.com/users/${this.state.userName}`)
         .then(res => res.json())
         .then(res => {
-          console.log(res);
           this.setState({
             userName: this.state.userName,
             userData: res

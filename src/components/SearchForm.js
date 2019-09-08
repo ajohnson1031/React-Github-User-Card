@@ -16,7 +16,6 @@ class SearchForm extends React.Component {
 
   handleClick = e => {
     e.preventDefault();
-    console.log("Search Term: ", this.state.searchTerm);
     if (
       this.state.searchTerm === "" ||
       this.state.searchTerm === undefined ||
