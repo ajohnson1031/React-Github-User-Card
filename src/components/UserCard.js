@@ -71,15 +71,15 @@ class UserCard extends React.Component {
               />
             </Card.Content>
             <UserDetails userDetails={this.state.userData} />
-            <FollowCard
-              followers={this.state.userData.followers_url}
-              followerCount={this.state.userData.followers}
-              followName={this.state.userName}
-            />
             <RepoList
               reposUrl={this.state.userData.repos_url}
               count={this.state.userData.public_repos}
               repoName={this.state.userName}
+            />
+            <FollowCard
+              followers={this.state.userData.followers_url}
+              followerCount={this.state.userData.followers}
+              followName={this.state.userName}
             />
           </Card>
         </Container>
