@@ -6,20 +6,22 @@ class RepoList extends React.Component {
   constructor({ reposUrl, count }) {
     super();
     this.state = {
-      reposUrl: reposUrl,
+      reposUrl: `${reposUrl}?page=1&per_page=15`,
       count: count,
-      allRepos: ""
+      allRepos: "",
+      page: 1
     };
   }
 
   componentDidMount() {
-    fetch(`${this.state.reposUrl}?page=1&per_page=${this.state.count}`)
+    fetch(this.state.reposUrl)
       .then(res => res.json())
       .then(res => {
         this.setState({
           reposUrl: this.state.reposUrl,
           count: this.state.count,
-          allRepos: res
+          allRepos: res,
+          page: this.state.page
         });
       })
       .catch(err => console.log(err));

@@ -7,29 +7,30 @@ class FollowCard extends React.Component {
     this.followers = followers;
 
     this.state = {
-      followers_url: this.followers,
+      followers_url: `${this.followers}?page=1&per_page=20`,
       followers: "",
-      follower_imgs: ""
+      follower_imgs: "",
+      page: 1
     };
   }
 
   componentDidMount() {
     // console.log(this.state);
 
-    fetch(`${this.state.followers_url}`)
+    fetch(this.state.followers_url)
       .then(res => res.json())
       .then(res => {
         this.setState({
-          followers_url: `${this.state.followers_url}?page=0&per_page=${this.state.followers.length}`,
+          followers_url: this.state.followers_url,
           followers: res,
           follower_imgs: res.map(r => r.avatar_url)
         });
+        console.log(this.state.followers_url);
       })
       .catch(err => console.log(err));
   }
 
   render() {
-    console.log(this.state.followers.length);
     return (
       this.state.followers && (
         <Card.Content className="mycontent following-content">
