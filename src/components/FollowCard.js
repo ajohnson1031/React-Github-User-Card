@@ -15,11 +15,12 @@ class FollowCard extends React.Component {
 
   componentDidMount() {
     // console.log(this.state);
-    fetch(this.state.followers_url)
+
+    fetch(`${this.state.followers_url}`)
       .then(res => res.json())
       .then(res => {
         this.setState({
-          followers_url: this.state.followers_url,
+          followers_url: `${this.state.followers_url}?page=0&per_page=${this.state.followers.length}`,
           followers: res,
           follower_imgs: res.map(r => r.avatar_url)
         });
@@ -28,14 +29,15 @@ class FollowCard extends React.Component {
   }
 
   render() {
+    console.log(this.state.followers.length);
     return (
-      <Card.Content className="mycontent following-content">
-        <div>
-          <h4>Followers ({this.state.followers.length}):</h4>
-        </div>
-        <div className="follower-list">
-          {this.state.followers &&
-            this.state.followers.map((follower, i) => {
+      this.state.followers && (
+        <Card.Content className="mycontent following-content">
+          <div>
+            <h4>Followers ({this.state.followers.length}):</h4>
+          </div>
+          <div className="follower-list">
+            {this.state.followers.map((follower, i) => {
               return (
                 <a
                   href={follower.html_url}
@@ -50,8 +52,9 @@ class FollowCard extends React.Component {
                 </a>
               );
             })}
-        </div>
-      </Card.Content>
+          </div>
+        </Card.Content>
+      )
     );
   }
 }

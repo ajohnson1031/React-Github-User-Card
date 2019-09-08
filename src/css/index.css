@@ -110,6 +110,8 @@ h4 {
   display: flex;
 }
 .following-content .follower-list {
+  display: flex;
+  flex-wrap: wrap;
   background-color: #f5f5f5;
   display: inline-flex;
   margin-left: 15px;
@@ -128,6 +130,7 @@ h4 {
   border-radius: 4px;
   padding-right: 10px;
   transition-duration: 0.2s;
+  margin-bottom: 15px;
 }
 .following-content .follower-list .follower-tab img {
   width: 50px;
@@ -183,4 +186,27 @@ h4 {
 .repo-list .repo-item:hover a {
   color: white;
   text-decoration: underline;
+}
+input {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2d333a;
+  outline: none;
+  margin-right: 5px;
+  width: 400px;
+}
+button {
+  border: none;
+  padding: 14px 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #e63e00;
+  outline: none;
+  margin: 0;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #b33000;
 }
