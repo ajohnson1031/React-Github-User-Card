@@ -58,7 +58,7 @@ class FollowCard extends React.Component {
                 );
               })}
             </div>
-            {this.state.count >= 20 && (
+            {this.state.followerCount >= 20 && (
               <a
                 href={`https://github.com/${this.state.followName}?tab=followers`}
                 rel="noopener noreferrer"

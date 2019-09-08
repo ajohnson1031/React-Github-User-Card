@@ -4,21 +4,29 @@ import GitHubCalendar from "react-github-calendar";
 import UserDetails from "./UserDetails";
 import FollowCard from "./FollowCard";
 import RepoList from "./RepoList";
+import SearchForm from "./SearchForm";
 
 class UserCard extends React.Component {
   constructor() {
     super();
-    this.state = { userName: "ajohnson1031", userData: "", searchTerm: "" };
+    this.state = { userName: "ajohnson1031", userData: "" };
   }
+
+  resetState = (userName, userData) => {
+    this.setState({
+      userName: userName,
+      userData: userData
+    });
+  };
 
   componentDidMount() {
     fetch("https://api.github.com/users/ajohnson1031")
       .then(res => res.json())
       .then(res => {
+        console.log(res);
         this.setState({
           userName: this.state.userName,
-          userData: res,
-          searchTerm: ""
+          userData: res
         });
       })
       .catch(err => console.log(err));
@@ -26,36 +34,17 @@ class UserCard extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.userName !== prevState.userName) {
-      fetch(`https://api.github.com/users/${this.state.searchTerm}`)
+      fetch(`https://api.github.com/users/${this.state.userName}`)
         .then(res => res.json())
         .then(res => {
+          console.log(res);
           this.setState({
-            userName: this.state.searchTerm,
-            userData: res,
-            searchTerm: ""
+            userName: this.state.userName,
+            userData: res
           });
         });
     }
   }
-
-  handleClick = e => {
-    e.preventDefault();
-    !this.state.searchTerm
-      ? console.log("error")
-      : this.setState({
-          userName: this.state.searchTerm,
-          userData: "",
-          searchTerm: this.state.searchTerm
-        });
-  };
-
-  handleChange = e => {
-    this.setState({
-      userName: this.state.userName,
-      userData: this.state.userData,
-      [e.target.name]: e.target.value
-    });
-  };
 
   render() {
     const orangeTheme = {
@@ -72,19 +61,7 @@ class UserCard extends React.Component {
         <Container className="main-wrapper">
           <Card>
             <Card.Header>
-              <form>
-                {" "}
-                <input
-                  type="text"
-                  name="searchTerm"
-                  placeholder="Enter user GitHub handle to search..."
-                  value={this.state.searchTerm}
-                  onChange={this.handleChange}
-                />
-                <button type="submit" onClick={this.handleClick}>
-                  SEARCH
-                </button>
-              </form>
+              <SearchForm thisState={this.state} resetState={this.resetState} />
               <h1>GitHub User Profile: {this.state.userName}</h1>
             </Card.Header>
             <Card.Content className="content user-calendar">
