@@ -50,7 +50,7 @@ const UserDetails = ({ userDetails }) => {
           </ul>
 
           <a
-            href="https://github.com/search?q=ajohnson1031&type=Users"
+            href={`https://github.com/search?q=${ud.login}&type=Users`}
             rel="noopener noreferrer"
             target="_blank"
           >
