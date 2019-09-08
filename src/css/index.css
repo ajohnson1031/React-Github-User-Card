@@ -76,7 +76,7 @@ h4 {
 }
 .user-content .img-detail .img-name {
   transition-duration: 0.2s;
-  padding-top: 12px;
+  padding: 12px;
   color: #434d57;
 }
 .user-content .img-detail a:visited {
