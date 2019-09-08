@@ -3,6 +3,7 @@ import { Container, Card } from "semantic-ui-react";
 import GitHubCalendar from "react-github-calendar";
 import UserDetails from "./UserDetails";
 import FollowCard from "./FollowCard";
+import RepoList from "./RepoList";
 
 const UserCard = ({ props }) => {
   const ud = props.userData;
@@ -29,6 +30,7 @@ const UserCard = ({ props }) => {
           </Card.Content>
           <UserDetails userDetails={ud} />
           <FollowCard followers={ud.followers_url} />
+          <RepoList reposUrl={ud.repos_url} count={ud.public_repos} />
         </Card>
       </Container>
     )

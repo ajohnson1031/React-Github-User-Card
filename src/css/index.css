@@ -149,3 +149,38 @@ h4 {
 .following-content .follower-list .follower-tab:hover p {
   text-decoration: underline;
 }
+.repo-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.repo-list h4 {
+  width: 100%;
+}
+.repo-list .repo-item {
+  display: flex;
+  width: fit-content;
+  height: 30px;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 0 10px 10px 0;
+  background-color: #f5f5f5;
+  transition-duration: 0.2s;
+}
+.repo-list .repo-item img {
+  height: 20px;
+  margin-right: 8px;
+}
+.repo-list .repo-item a {
+  font-weight: bold;
+  color: #434d57;
+}
+.repo-list .repo-item:hover {
+  background-color: dodgerblue;
+}
+.repo-list .repo-item:hover img {
+  filter: invert(100%);
+}
+.repo-list .repo-item:hover a {
+  color: white;
+  text-decoration: underline;
+}

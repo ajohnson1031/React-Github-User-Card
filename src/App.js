@@ -8,7 +8,6 @@ class App extends React.Component {
     fetch("https://api.github.com/users/ajohnson1031")
       .then(res => res.json())
       .then(res => {
-        console.log(res);
         this.setState({ userName: this.state.userName, userData: res });
       })
       .catch(err => console.log(err));

@@ -47,9 +47,6 @@ const UserDetails = ({ userDetails }) => {
             <li>
               <strong>Followers:</strong> {ud.followers}
             </li>
-            <li>
-              <strong>Following:</strong> {ud.following}
-            </li>
           </ul>
 
           <a

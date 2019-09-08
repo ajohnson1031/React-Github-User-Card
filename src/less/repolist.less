@@ -1,0 +1,42 @@
+.repo-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  h4 {
+    width: 100%;
+  }
+
+  .repo-item {
+    display: flex;
+    width: fit-content;
+    height: 30px;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 0 10px 10px 0;
+    background-color: @white-smoke;
+    transition-duration: 0.2s;
+
+    img {
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    a {
+      font-weight: bold;
+      color: @main-text;
+    }
+
+    &:hover {
+      background-color: dodgerblue;
+
+      img {
+        filter: invert(100%);
+      }
+
+      a {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
