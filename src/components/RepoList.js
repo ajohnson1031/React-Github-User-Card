@@ -57,7 +57,8 @@ class RepoList extends React.Component {
                 target="_blank"
               >
                 <div className="github-linkto">
-                  <p>{`See All Repositories (${this.state.count})`}</p>
+                  <p>{`See All Repositories (${this.state.count -
+                    20} more...)`}</p>
                 </div>
               </a>
             )}

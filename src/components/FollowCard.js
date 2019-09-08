@@ -65,7 +65,8 @@ class FollowCard extends React.Component {
                 target="_blank"
               >
                 <div className="github-linkto">
-                  <p>{`See All Followers (${this.state.followerCount})`}</p>
+                  <p>{`See All Followers (${this.state.followerCount -
+                    20} more...)`}</p>
                 </div>
               </a>
             )}
