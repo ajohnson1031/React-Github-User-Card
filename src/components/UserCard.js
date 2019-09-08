@@ -102,6 +102,7 @@ class UserCard extends React.Component {
             <RepoList
               reposUrl={this.state.userData.repos_url}
               count={this.state.userData.public_repos}
+              repoName={this.state.userName}
             />
           </Card>
         </Container>

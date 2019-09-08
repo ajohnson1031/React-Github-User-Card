@@ -25,6 +25,11 @@ h4 {
   background-color: #fff;
   box-shadow: 0 0 10px #777;
 }
+.list-container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 145px);
+}
 .github-linkto {
   width: 100%;
   background-color: #434d57;
@@ -127,9 +132,6 @@ h4 {
 .following-content .h4-container {
   width: 110px;
 }
-.following-content .list-container {
-  width: calc(100% - 145px);
-}
 .following-content .follower-list {
   display: flex;
   flex-wrap: wrap;
@@ -179,7 +181,13 @@ h4 {
   display: flex;
   flex-wrap: wrap;
 }
-.repo-list h4 {
+.repo-list .repos-listed {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f5f5f5;
+  display: inline-flex;
+  margin-left: 15px;
+  padding: 10px;
   width: 100%;
 }
 .repo-list .repo-item {
@@ -189,7 +197,7 @@ h4 {
   align-items: center;
   padding: 5px 10px;
   margin: 0 10px 10px 0;
-  background-color: #f5f5f5;
+  background-color: #dcdcdc;
   transition-duration: 0.2s;
 }
 .repo-list .repo-item img {

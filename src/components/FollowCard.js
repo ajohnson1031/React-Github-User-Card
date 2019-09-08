@@ -4,15 +4,12 @@ import { Card, Image } from "semantic-ui-react";
 class FollowCard extends React.Component {
   constructor({ followers, followerCount, followName }) {
     super();
-    this.followers = followers;
-    this.followerCount = followerCount;
-    this.followName = followName;
 
     this.state = {
-      followName: this.followName,
-      followers_url: `${this.followers}?page=1&per_page=20`,
+      followName: followName,
+      followers_url: `${followers}?page=1&per_page=20`,
       followers: "",
-      followerCount: this.followerCount,
+      followerCount: followerCount,
       follower_imgs: "",
       page: 1
     };
@@ -61,15 +58,17 @@ class FollowCard extends React.Component {
                 );
               })}
             </div>
-            <a
-              href={`https://github.com/${this.state.followName}?tab=followers`}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <div className="github-linkto">
-                <p>{`See All Followers (${this.state.followerCount})`}</p>
-              </div>
-            </a>
+            {this.state.count >= 20 && (
+              <a
+                href={`https://github.com/${this.state.followName}?tab=followers`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div className="github-linkto">
+                  <p>{`See All Followers (${this.state.followerCount})`}</p>
+                </div>
+              </a>
+            )}
           </div>
         </Card.Content>
       )
