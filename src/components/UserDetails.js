@@ -35,9 +35,11 @@ const UserDetails = ({ userDetails }) => {
         <Card.Content className="user-detail">
           <h4>User Details</h4>
           <ul>
-            <li>
-              <strong>Bio:</strong> {ud.bio}
-            </li>
+            {ud.bio && (
+              <li>
+                <strong>Bio:</strong> {ud.bio}
+              </li>
+            )}
             <li>
               <strong>Date Joined:</strong> {outputDate}
             </li>
