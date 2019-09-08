@@ -1,0 +1,52 @@
+.following-content {
+  display: flex;
+
+  .follower-list {
+    background-color: @white-smoke;
+    display: inline-flex;
+    margin-left: 15px;
+    padding: 10px;
+
+    a {
+      display: inline-flex;
+      padding: 0 10px;
+
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: darken(dodgerblue, 10%);
+    }
+
+    .follower-tab {
+      display: flex;
+      background-color: darken(@white-smoke, 10%);
+      border-radius: 4px;
+      padding-right: 10px;
+      transition-duration: 0.2s;
+
+      img {
+        width: 50px;
+        border-radius: 4px;
+        padding-right: 10px;
+        filter: sepia(100%);
+        transition-duration: 0.2s;
+      }
+
+      p {
+        padding-top: 4px;
+      }
+
+      &:hover {
+        background-color: dodgerblue;
+        color: white;
+
+        img {
+          filter: sepia(0);
+        }
+
+        p {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
