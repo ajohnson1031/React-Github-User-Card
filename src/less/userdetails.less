@@ -1,0 +1,86 @@
+.mycontent {
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  padding: 15px;
+}
+
+.user-content {
+  display: flex;
+
+  img {
+    width: 150px;
+    filter: sepia(100%);
+    transition-duration: 0.2s;
+    cursor: pointer;
+  }
+
+  .img-detail {
+    background-color: #ccc;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+
+    .img-name {
+      transition-duration: 0.2s;
+      padding: 12px;
+      color: @main-text;
+    }
+
+    a {
+      &:visited {
+        color: @main-text;
+      }
+    }
+
+    &:hover {
+      background-color: dodgerblue;
+      img {
+        filter: sepia(0);
+      }
+
+      .img-name {
+        background-color: dodgerblue;
+        color: white;
+      }
+
+      a {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .user-detail {
+    padding: 0 15px;
+    background-color: @white-smoke;
+    margin-left: 15px;
+    width: 100%;
+    border: none;
+
+    ul {
+      padding-left: 0;
+      li {
+        list-style: none;
+        font-size: 0.95rem;
+        line-height: 1.4rem;
+      }
+    }
+
+    .follow-link {
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 8px 20px;
+      background-color: green;
+      width: fit-content;
+      color: white;
+      border-radius: 4px;
+      transition-duration: 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lighten(green, 10%);
+      }
+    }
+  }
+}

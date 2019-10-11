@@ -1,0 +1,37 @@
+form {
+  display: flex;
+  font-weight: bold;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  color: darken(@main-text, 10%);
+  outline: none;
+  margin-right: 5px;
+  width: 400px;
+}
+
+button {
+  border: none;
+  padding: 14px 12px;
+  color: white;
+  font-size: 14px;
+  background-color: darken(orangered, 5%);
+  outline: none;
+  margin: 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(orangered, 15%);
+  }
+}
+
+.err {
+  padding: 12px;
+  content: "";
+  background-color: pink;
+  margin-left: 5px;
+  border: 2px solid darken(pink, 20%);
+  color: darken(pink, 30%);
+}
