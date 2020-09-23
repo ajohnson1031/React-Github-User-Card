@@ -16,7 +16,7 @@ Unsatisfied with the search feature on the main GitHub site, it became increasin
 
 ### Screenshots
 
-<img src="https://raw.githubusercontent.com/ajohnson1031/React-Github-User-Card/7529d36abcc79643ef2bf0aab37c79d7d54d15e6/src/imgs/screenshot.jpg" alt="GitHub User Lookup Screenshot">
+<img src="https://raw.githubusercontent.com/ajohnson1031/React-Github-User-Card/master/src/imgs/screenshot.jpg" alt="GitHub User Lookup Screenshot">
 
 ## Tech/Framework USed
 
